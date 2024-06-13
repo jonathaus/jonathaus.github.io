@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jona's Directory</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="font-family: Cascadia Code; font-size: large; background-color: black;" text="#ffffff" >
-    Jona's Directory
+<body style="font-family: Cascadia Code; background-color: black;" text="#ffffff">
+    Jona's Directory (JS) Not a Corpo. 
+    <pre>     
+           _               _      ___  _            _                
+        _ | |___ _ _  __ _( )___ |   \(_)_ _ ___ __| |_ ___ _ _ _  _ 
+       | || / _ \ ' \/ _` |/(_-< | |) | | '_/ -_) _|  _/ _ \ '_| || |
+        \__/\___/_||_\__,_| /__/ |___/|_|_| \___\__|\__\___/_|  \_, |
+                                                                |__/ 
+    </pre>
+    <br>
+    
+    Welcome to the <a class="neonTextD">Directory</a>.<br>
+
+    <span id="date"></span> - <span id="span"></span>
+    
+    <script>
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+    </script>
+    
+    <script>
+        var span = document.getElementById('span');
+
+        function time() {
+        var d = new Date();
+        var s = d.getSeconds();
+        var m = d.getMinutes();
+        var h = d.getHours();
+        span.textContent = 
+            ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+        }
+
+        setInterval(time, 1000);
+    </script><br>
+
+
+    For a list of available commands, type <a class="neonText">'help'</a>.
 </body>
 </html>
