@@ -73,7 +73,23 @@
                     cliInput.value = '';
                 } else if (value === 'exit') {
                     location.reload();
-                    cliInput.value = ''
+                    cliInput.value = '';
+                } else if (value === 'kylie') {
+                    cliOutput.innerHTML = `
+                        For my <a href="Downloads/kylie2year.exe" download>Kylie</a>
+                        <pre style="color: rgb(234, 81, 240);">
+ㅤ⠀⠀⠀⠀  ⠀ ⢀⣤⣄
+⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⡆ ⣠⣶⣿⣶⡀
+⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏
+⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⠋
+⠀⠀⠀⠀⠀⣾⣿⣿⣧⠀⠻⣿⣿⠿⠉
+⣰⣿⣿⣿⣿⣿⣿⣿
+⠸⣿⣿⣿⣿⣿⣿⠏
+⠀⠈⠛⠿⣿⣿⡟
+                        </pre>
+                    `;
+                    cliInput.value = '';
                 }else if (value === '') {
                     cliInput.value = '';
                 }else {
