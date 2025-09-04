@@ -47,13 +47,50 @@
 
     For a list of available commands, type <a class="neonText">'help'</a>.
 
+  <!--
+    Site under construction. Please check back later.
+    -->
+    <script>
+        window.onload = function() {
+            document.getElementById('cliInput').focus();
+        };
+    </script>
+    <div style="margin-top: 16px;" id="cliContainer">
+        <span style="color: #008000;">jonadir@site:$</span>
+        <input type="text" id="cliInput" style="background: black; color: white; border: none; outline: none; font-family: Cascadia Code; width: 60%; font-size: 1em;">
+        <span class="cursor"></span>
+    </div>
+    <div id="cliOutput" style="margin-top: 8px; color: #ffffff; font-family: Cascadia Code;"></div>
+    <script>
+        const cliInput = document.getElementById('cliInput');
+        const cliOutput = document.getElementById('cliOutput');
+
+        cliInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                const value = cliInput.value.trim().toLowerCase();
+                if (value === 'help') {
+                    cliOutput.textContent = "The Site Is Currently Under Construction. Please Check Back Later! - type exit to clear";
+                    cliInput.value = '';
+                } else if (value === 'exit') {
+                    location.reload();
+                    cliInput.value = ''
+                }else if (value === '') {
+                    cliInput.value = '';
+                }else {
+                        cliOutput.textContent = "Unknown command - try again.";
+                        cliInput.value = '';
+                    }
+            }
+        });
+    </script>
+
+    
+    <!-- 
     <br>
     <br>
     <br>
     <br>For my <a href="Downloads\kylie2year.exe" download>Kylie</a> </br>
-
-    <body>
-        <pre style="color: rgb(234, 81, 240);">
+    <pre style="color: rgb(234, 81, 240);">
     ㅤ⠀⠀⠀⠀  ⠀ ⢀⣤⣄
     ⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⡆ ⣠⣶⣿⣶⡀
     ⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
@@ -65,17 +102,11 @@
     ⠀⠈⠛⠿⣿⣿⡟
 
 
-        </pre>
-
-    </body>
+        </pre> -->
     
-    <!-- <script>
-        document.addEventListener("click", function() {
-            document.getElementById("input").focus();
-        });
-    </script> -->
- 
-    <style>
+    
+
+    <!-- <style>
         .cursor {
             display: inline-block;
             width: 6px;
@@ -92,7 +123,7 @@
             50% { opacity: 1; }
             100% { opacity: 0; }
         }
-    </style>
+    </style> -->
     
     <!-- <input type="text" id="input" onkeyup="showText()" placeholder="jonadir@site:$">
     <div>jonadir@site:$ <a id="output"></a><span class="cursor"></span>
