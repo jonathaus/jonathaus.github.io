@@ -50,7 +50,7 @@
   <!--
     Site under construction. Please check back later.
     -->
-    <script>
+    <!-- <script>
         function focusCliInput() {
             setTimeout(function() {
                 document.getElementById('cliInput').focus();
@@ -65,7 +65,7 @@
         };
 
         window.addEventListener('focus', focusCliInput);
-    </script>
+    </script> -->
 
     </script>
     <div style="margin-top: 16px;" id="cliContainer">
@@ -181,6 +181,22 @@
         });
     </script>
 
+    <script>
+        function focusCliInput() {
+            setTimeout(function() {
+                document.getElementById('cliInput').focus();
+            }, 100);
+        }
+
+        window.onload = focusCliInput;
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                focusCliInput();
+            }
+        };
+
+        window.addEventListener('focus', focusCliInput);
+    </script>
     
     <!-- 
     <br>
