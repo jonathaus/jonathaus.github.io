@@ -68,30 +68,98 @@
         cliInput.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
                 const value = cliInput.value.trim().toLowerCase();
+
+                // Help Command
                 if (value === 'help') {
-                    cliOutput.textContent = "The Site Is Currently Under Construction. Please Check Back Later! - type exit to clear";
+                    cliOutput.innerHTML = `
+                        <div>The Site Is Currently Under Construction!</div>
+                        <div>Available commands:</div>
+                        <div>- help</div>
+                        <div>- github</div>
+                        <div>- resume</div>
+                        <div>- reload</div>
+                        <div>- clear</div>
+                        <div>- exit</div>
+                        <br>
+                        <div>Coming Soon:</div>
+                        <div>- about</div>
+                        <div>- projects</div>
+                        <div>- contact</div>
+
+                    `;
                     cliInput.value = '';
-                } else if (value === 'exit') {
+
+                // reload command
+                } else if (value === 'reload') {
                     location.reload();
                     cliInput.value = '';
+
+                // kylie command
                 } else if (value === 'kylie') {
                     cliOutput.innerHTML = `
                         For my <a href="Downloads/kylie2year.exe" download>Kylie</a>
                         <pre style="color: rgb(234, 81, 240);">
-ㅤ⠀⠀⠀⠀  ⠀ ⢀⣤⣄
-⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⡆ ⣠⣶⣿⣶⡀
-⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏
-⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⠋
-⠀⠀⠀⠀⠀⣾⣿⣿⣧⠀⠻⣿⣿⠿⠉
-⣰⣿⣿⣿⣿⣿⣿⣿
-⠸⣿⣿⣿⣿⣿⣿⠏
-⠀⠈⠛⠿⣿⣿⡟
+                            ㅤ⠀⠀⠀⠀  ⠀ ⢀⣤⣄
+                            ⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⡆ ⣠⣶⣿⣶⡀
+                            ⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                            ⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏
+                            ⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⣿⠋
+                            ⠀⠀⠀⠀⠀⣾⣿⣿⣧⠀⠻⣿⣿⠿⠉
+                            ⣰⣿⣿⣿⣿⣿⣿⣿
+                            ⠸⣿⣿⣿⣿⣿⣿⠏
+                            ⠀⠈⠛⠿⣿⣿⡟
                         </pre>
                     `;
                     cliInput.value = '';
+
+                // github command
+                }else if (value === 'github') {
+                    cliInput.value = '';
+                    cliOutput.innerHTML = `Visit my <a href="https://github.com/jonathaus" target="_blank" style="color:#00ffff;">GitHub</a> profile.`;
+                
+                // clear command
+                }else if (value === 'clear') {
+                    cliInput.value = '';
+                    cliOutput.textContent = '';
+                    cliOutput.innerHTML = '';
+
+                // exit command
+                }else if (value === 'exit') {
+                    window.close();
+
+                // resume command
+                }else if (value === 'resume') {
+                    cliInput.value = '';
+                    cliOutput.innerHTML = `Download my <a href="Downloads/Jonathan_Silva_Resume.pdf" download style="color:#00ffff;">Resume</a>.`;
+                    cliOutput.innerHTML += `<br>Or view it <a href="resume.html" target="_blank" style="color:#00ffff;">here</a>.`;
+                
+                // about command (coming soon)
+                }else if (value === 'about') {
+                    cliOutput.innerHTML = `
+                        <div>About command coming soon!</div>
+                    `;
+                    cliInput.value = '';
+                
+                // projects command (coming soon)
+                }else if (value === 'projects') {
+                    cliOutput.innerHTML = `
+                        <div>Projects List coming soon!</div>
+                        <div>In the meantime, check out my <a href="https://github.com/jonathaus" target="_blank" style="color:#00ffff;">GitHub</a> profile.</div>
+                    `;
+                    cliInput.value = '';
+                
+                // contact command (coming soon)
+                }else if (value === 'contact') {
+                    cliOutput.innerHTML = `
+                        <div>Contact command coming soon!</div>
+                    `;
+                    cliInput.value = '';
+
+                // blank return
                 }else if (value === '') {
                     cliInput.value = '';
+
+                // unknown command
                 }else {
                         cliOutput.textContent = "Unknown command - try again.";
                         cliInput.value = '';
