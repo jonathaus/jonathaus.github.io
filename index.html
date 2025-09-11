@@ -51,9 +51,22 @@
     Site under construction. Please check back later.
     -->
     <script>
-        window.onload = function() {
-            document.getElementById('cliInput').focus();
+        function focusCliInput() {
+            setTimeout(function() {
+                document.getElementById('cliInput').focus();
+            }, 100);
+        }
+
+        window.onload = focusCliInput;
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                focusCliInput();
+            }
         };
+
+        window.addEventListener('focus', focusCliInput);
+    </script>
+
     </script>
     <div style="margin-top: 16px;" id="cliContainer">
         <span style="color: #008000;">jonadir@site:$</span>
