@@ -168,8 +168,13 @@
                     `;
                     cliInput.value = '';
 
-                }else if (value == 'dl res') {
-                    window.location.href = 'Downloads/Jonathan Silva Resume.pdf';
+                } else if (value === 'dl res') {
+                    const link = document.createElement('a');
+                    link.href = 'Downloads/Jonathan Silva Resume.pdf';
+                    link.download = 'Jonathan Silva Resume.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
                     cliInput.value = '';
                 
 
