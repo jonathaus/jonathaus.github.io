@@ -169,13 +169,8 @@
                     cliInput.value = '';
 
                 } else if (value === 'dl res') {
-                    const link = document.createElement('a');
-                    link.href = 'Downloads/Jonathan Silva Resume.pdf';
-                    link.download = 'Jonathan Silva Resume.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
                     cliInput.value = '';
+                    cliOutput.innerHTML = `<a href="Downloads/Jonathan_Silva_Resume.pdf" download style="color:#00ffff;">Resume</a>`;
                 
 
                 // blank return
