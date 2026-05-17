@@ -143,9 +143,13 @@
                 // resume command
                 }else if (value === 'resume') {
                     cliInput.value = '';
-                    cliOutput.innerHTML = `Download my <a href="Downloads/Jonathan_Silva_Resume.pdf" download style="color:#00ffff;">Resume</a>.`;
-                    cliOutput.innerHTML += `<br>Or view it <a href="resume.html" target="_blank" style="color:#00ffff;">here</a>.`;
-                
+                    cliOutput.innerHTML = `
+                    Download my <a href="Downloads/Jonathan Silva Resume.pdf" download style="color:#00ffff;">Resume</a>.
+                    <div style="margin-top:8px;">
+                        Or view it in your browser: <a href="Downloads/Jonathan Silva Resume.pdf" target="_blank" style="color:#00ffff;">View Resume</a>.
+                    </div>
+                `;
+
                 // about command (coming soon)
                 }else if (value === 'about') {
                     cliOutput.innerHTML = `
@@ -170,8 +174,25 @@
 
                 } else if (value === 'dl res') {
                     cliInput.value = '';
-                    cliOutput.innerHTML = `<a href="Downloads/Jonathan Silva Resume.pdf" download style="color:#00ffff;">Resume</a>`;
-                
+                    cliOutput.innerHTML = `
+                        <div><a href="Downloads/Jonathan Silva Resume.pdf" download style="color:#00ffff;">Tech Resume</a></div>
+                        <div><a href="Downloads/Jonathan Silva Resume May.pdf" download style="color:#00ffff;">General Resume</a></div>
+                    `;
+                // opens new tab with viewable resume
+                } else if (value === 'view res') {
+                    cliInput.value = '';
+                    cliOutput.innerHTML = `
+                        <div>
+                            <div><a href="Downloads/Jonathan Silva Resume.pdf" target="_blank" style="color:#00ffff;">Open resume in new tab</a></div>
+                            <div style="margin-top:8px;">
+                                <iframe src="Downloads/Jonathan Silva Resume.pdf" style="width:100%;height:600px;border:1px solid #444;" frameborder="0"></iframe>
+                            </div>
+                            <div style="margin-top:8px;color:#888;">
+                                If embedding isn't supported, <a href="Downloads/Jonathan Silva Resume.pdf" download style="color:#00ffff;">download the resume</a>.
+                            </div>
+                        </div>
+                        
+                    `;
 
                 // blank return
                 }else if (value === '') {
