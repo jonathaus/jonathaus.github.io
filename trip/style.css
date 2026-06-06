@@ -1,3 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #1a0f14, #0b0b10);
+  overscroll-behavior: none;
+}
+
+body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -201,4 +217,9 @@ button {
     transform: translate(-50%, -50%) scale(4);
     opacity: 0;
   }
+}
+
+
+* {
+  -webkit-tap-highlight-color: transparent;
 }
