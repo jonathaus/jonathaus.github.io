@@ -26,7 +26,8 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 
-// 🔓 unlock
+
+/* 🔓 UNLOCK FUNCTION */
 function checkCode() {
   const input = document.getElementById("codeInput");
   const lock = document.getElementById("lockScreen");
@@ -46,10 +47,29 @@ function checkCode() {
     }, 600);
 
   } else {
-    document.getElementById("error").style.display = "block";
+    // ❌ wrong password
+    const error = document.getElementById("error");
+    error.style.display = "block";
+
+    input.value = "";          // 💥 clear input
+    input.focus();             // bring cursor back
+
+    const box = document.querySelector(".lockBox");
+    box.style.animation = "shake 0.3s";
+
+    setTimeout(() => {
+      box.style.animation = "";
+      error.style.display = "none";
+    }, 800);
   }
 }
 
+/* ⌨️ ENTER KEY SUPPORT */
+document.getElementById("codeInput").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    checkCode();
+  }
+});
 
 
 
