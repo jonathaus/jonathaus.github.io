@@ -113,3 +113,7 @@ function createRipple(x, y) {
 
   setTimeout(() => ripple.remove(), 600);
 }
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/trip/sw.js");
+}
