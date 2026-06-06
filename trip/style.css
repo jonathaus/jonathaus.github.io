@@ -1,21 +1,23 @@
-html {
-  background: #0b0b10;
-}
-
-body {
+html, body {
+  height: 100%;
+  overflow: hidden;
   margin: 0;
-  min-height: 100vh;
-
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: white;
-
   background: radial-gradient(circle at top, #1a0f14, #0b0b10);
-
-  overflow-x: hidden;   /* allows vertical scroll */
+  overscroll-behavior: none;
 }
 
 #app {
-  min-height: 100vh;
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  background: #0b0b10;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 /* 🔐 LOCK SCREEN */
@@ -91,6 +93,7 @@ button {
 
 /* 🔓 APP (hidden first) */
 #app {
+  margin-top: -65px;
   opacity: 0;
   transform: scale(1.08) translateY(20px);
   filter: blur(10px);
@@ -220,12 +223,15 @@ button {
 }
 
 .lockHint {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
   margin-top: 10px;
   text-align: center;
   font-size: 12px;
   opacity: 0.35;
   letter-spacing: 1px;
-
   cursor: pointer;
   transition: opacity 0.2s ease;
 }

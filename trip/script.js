@@ -170,7 +170,7 @@ function startHoldLock() {
     if (isHolding) {
       lockAppManually();
     }
-  }, 1500); // 2s hold
+  }, 2000); // 2s hold
 }
 
 function cancelHoldLock() {
