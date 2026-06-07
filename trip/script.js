@@ -306,6 +306,20 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/trip/sw.js");
 }
 
+// Listen for reload requests from the service worker (helps iOS update behavior)
+if (navigator.serviceWorker && navigator.serviceWorker.addEventListener) {
+  navigator.serviceWorker.addEventListener('message', (ev) => {
+    try {
+      if (ev && ev.data && ev.data.type === 'SW_UPDATE_RELOAD') {
+        // small delay to let activation finish
+        setTimeout(() => {
+          if (document.visibilityState === 'visible') window.location.reload();
+        }, 250);
+      }
+    } catch (e) {}
+  });
+}
+
 
 
 function lockAppManually() {
