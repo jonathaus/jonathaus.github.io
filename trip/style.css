@@ -224,18 +224,14 @@ button {
 
 .lockHint {
   position: fixed;
-  bottom: 10px;
-  left: 48%;
-  margin-top: 10px;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   font-size: 12px;
   opacity: 0.35;
-  letter-spacing: 1px;
   cursor: pointer;
   transition: opacity 0.2s ease;
-
-  border: 1px white;
-
 }
 
 .lockHint:active {
